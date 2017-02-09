@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for p in posts %}
+    <a href="/blog/{{p.key().id()}}"><h4>{{ p.subject }}</h4></a>
+    <br><br>
+    <p>{{ p.body }}</p>
+    <hr>
+{% endfor %}
+<div>
+{% if previous > -1 %}
+    <span><a href="/blog?page={{previous}}">Previous</a></span>
+{% endif %}
+{% if next %}
+    <span><a href="/blog?page={{next}}">Next</a></span>
+{% endif %}
+</div>
+{% endblock %}

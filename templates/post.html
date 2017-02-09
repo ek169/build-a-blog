@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="post">
+    <div class="post-heading">
+        <h3>{{p.subject}}</h3>
+    </div>
+    <br>
+    <div class="post-date">
+        <span>{{p.created.strftime("%b %d, %Y")}}</span>
+    </div>
+    <br>
+    <div class="post-content">
+        <p>{{p.body | safe}}</p>
+    </div>
+</div>
+{% endblock %}
